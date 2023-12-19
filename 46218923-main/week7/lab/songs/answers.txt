@@ -1,0 +1,22 @@
+Reflection:
+
+SELECT AVG(energy), AVG(danceability), AVG(valence) FROM songs;
++-------------+-------------------+--------------+
+| AVG(energy) | AVG(danceability) | AVG(valence) |
++-------------+-------------------+--------------+
+| 0.65906     | 0.71646           | 0.484443     |
++-------------+-------------------+--------------+
+Avg energy:  0.65906
+Avg valence: 0.484443
+Avg danceability: 0.71646
+
+this figures say nothing about the quality of a song, the emotional component is missing.
+
+it would be better to have the preference or rating for a song directly  by the user
+
+
+
+
+
+
+

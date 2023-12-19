@@ -1,0 +1,79 @@
+h<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            // TODO: Add code to check answers to questions
+            document.addEventListener('DOMContentLoaded', function() {
+
+                // When click  on correct answer button, set the green color
+                let correct = document.querySelector('.correct');
+                correct.addEventListener('click', function() {
+                correct.style.backgroundColor = 'green';
+                document.querySelector('#comment').innerHTML = 'Correct!';
+                });
+
+                // When click  on incorrect answer button, set the red color
+                let incorrect = document.querySelectorAll('.incorrect');
+
+                for (let i = 0; i < incorrect.length; i++)
+                {
+                    incorrect[i].addEventListener('click', function() {
+                        incorrect[i].style.backgroundColor = 'red';
+                        document.querySelector('#comment').innerHTML = 'Incorrect'
+                    });
+                }
+
+                // check the submission of the second question
+                document.querySelector('#sub').addEventListener('click', function() {
+                    let input = document.querySelector('input');
+                    if (input.value == "CERN" || input.value == "Switzerland"){
+                        input.style.backgroundColor = 'green';
+                        document.querySelector('#comment-2').innerHTML = 'Correct!';
+                    }
+                    else
+                    {
+                        input.style.backgroundColor = 'red';
+                        document.querySelector('#comment-2').innerHTML = 'Incorrect!';
+                    }
+                });
+
+            });
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <!-- TODO: Add multiple choice question here -->
+                <h3>Which one of the following scientists invented the World Wide Web ?</h3>
+
+                <button class="incorrect" type="submit">Stephen Hawking</button>
+                <button class="incorrect" type="submit">Alan Turing</button>
+                <button class="correct" type="submit">Tim Berners-Lee</button>
+                <button class="incorrect" type="submit">James D. Watson</button>
+                <button class="incorrect" type="submit">John Harward</button>
+
+                <p id="comment"></p>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <!-- TODO: Add free response question here -->
+                <h3>Where did the first public website in 1991 go live ?</h3>
+                <input type="text"></input> <button id="sub" type="submit">Submit</button>
+
+                <p id="comment-2"></p>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Buy Stocks
+{% endblock %}
+
+{% block main %}
+    <h2>Buy Stocks</h2>
+
+    <main class="container py-5 text-center">
+
+        <form action="/buy" method="post">
+            <div class="mb-3">
+                <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="symbol" placeholder="Symbol" type="text" required>
+            </div>
+            <div class="mb-3">
+                <input autocomplete="off" class="form-control mx-auto w-auto" min="1" name="shares" placeholder="Shares" type="number" required>
+            </div>
+            <button class="btn btn-primary" type="submit">Buy</button>
+        </form>
+
+        {% if message %}
+            <div class="mt-3 alert alert-success" role="alert">
+                {{ "Successfully executed" }}
+            </div>
+        {% endif %}
+
+        {% if error %}
+            <div class="mt-3 alert alert-danger" role="alert">
+                {{ "something went wrong" }}
+            </div>
+        {% endif %}
+
+    </main>
+{% endblock %}
